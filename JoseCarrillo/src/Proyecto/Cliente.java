@@ -10,16 +10,18 @@ package Proyecto;
  * @author Carrillo
  */
 public class Cliente {
+
     private String nombre;
-    public char prioridad;
-    private int fila;
+    private char prioridad;
     private int tiempo;
 
-    public Cliente(String nombre, char prioridad, int fila, int tiempo) {
+    public Cliente siguiente;
+
+    //contructor 
+    public Cliente(String nombre, char prioridad, int tiempo) {
 
         this.nombre = nombre;
         this.prioridad = prioridad;
-        this.fila = fila;
         this.tiempo = tiempo;
     }
 
@@ -29,10 +31,6 @@ public class Cliente {
 
     public char getPrioridad() {
         return prioridad;
-    }
-
-    public int getFila() {
-        return fila;
     }
 
     public int getTiempo() {
@@ -47,17 +45,20 @@ public class Cliente {
         this.prioridad = prioridad;
     }
 
-    public void setFila(int fila) {
-        this.fila = fila;
-    }
-
     public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
 
-    @Override
-    public String toString() {
-        return nombre + "" + prioridad + "" + fila + "" + tiempo;
+    public Cliente getSiguiente() {
+        return siguiente;
     }
 
+    public void setSiguiente(Cliente siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + "" + prioridad + "" + tiempo;
+    }
 }
