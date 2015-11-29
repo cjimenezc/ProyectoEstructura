@@ -51,6 +51,27 @@ public class Banco {
             crear();
         }
     }
+    private Cliente getSig(){
+        Cliente cliente = listaAtendiendo.get(0);
+        listaAtendiendo.eliminarInicio();
+        cliente.setSiguiente(null);
+        return cliente;
+    }
+
     
+    private void agregarCajero1() {
+        if (listaAtendiendo.size()!=0){
+            Cliente cliente = getSig();
+            caja1.insertarInicio(cliente);
+        }
+    }
+
+    
+    private void agregarCajero2() {
+        if (listaAtendiendo.size()!=0){
+            Cliente cliente = getSig();
+            caja2.insertarInicio(cliente);
+        }
+    }
     
 }
