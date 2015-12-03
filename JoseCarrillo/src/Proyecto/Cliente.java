@@ -7,17 +7,19 @@ package Proyecto;
 
 /**
  *
- * @author Carrillo
+ * @author Jose Carrillo Mendez
+ * @author Cristiam Jimenez Chacon
  */
 public class Cliente {
 
+    //Variables
     private String nombre;
     private char prioridad;
     private int tiempo;
 
-    public Cliente siguiente;
+    private Cliente siguiente;
 
-    //contructor 
+    //Contructor 
     public Cliente(String nombre, char prioridad, int tiempo) {
 
         this.nombre = nombre;
@@ -29,16 +31,12 @@ public class Cliente {
         return nombre;
     }
 
-    public char getPrioridad() {
-        return prioridad;
-    }
-
-    public int getTiempo() {
-        return tiempo;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public char getPrioridad() {
+        return prioridad;
     }
 
     public void setPrioridad(char prioridad) {
@@ -47,6 +45,10 @@ public class Cliente {
 
     public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
+    }
+
+    public int getTiempo() {
+        return tiempo;
     }
 
     public Cliente getSiguiente() {

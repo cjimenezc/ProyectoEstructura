@@ -7,7 +7,8 @@ package Proyecto;
 
 /**
  *
- * @author Jose Carrillo
+ * @author Jose Carrillo Mendez
+ * @author Cristiam Jimenez Chacon
  */
 public class ListaSimple {
 
@@ -25,7 +26,7 @@ public class ListaSimple {
         return false;
     }
 
-    //inserta un nodo  
+    //Insertar un nodo al inicio de la lista simple
     public void insertarInicio(Cliente cliente) {
         Cliente nuevo = cliente;
         if (esVacia()) {
@@ -36,7 +37,7 @@ public class ListaSimple {
         }
     }
 
-    
+    //Insertar un nodo al final de la lista simple
     public void insertarFinal(Cliente cliente) {
         Cliente nuevo = cliente;
         if (esVacia()) {
@@ -50,6 +51,7 @@ public class ListaSimple {
         }
     }
 
+    //Eliminar el ultimo nodo de la lista simple
     public void eliminaFin() {
         if (!esVacia()) {
             Cliente aux = nodo;
@@ -60,6 +62,7 @@ public class ListaSimple {
         }
     }
 
+    //Eliminar un nodo entre nodos de la lista simple
     public void eliminarEntreNodos(int pos) {
         if (!esVacia()) {
             Cliente aux = nodo;
@@ -81,12 +84,14 @@ public class ListaSimple {
         }
     }
 
+    //Eliminar el nodo del inicio de la lista simple
     public void eliminarInicio() {
         if (!esVacia()) {
             nodo = nodo.getSiguiente();
         }
     }
 
+    //Tamaño de la lista simple
     public int size() {
         Cliente aux = nodo;
         int cont = 0;
@@ -110,12 +115,13 @@ public class ListaSimple {
         return aux;
     }
 
+    //imprimi la lista simple
     public void mostrarLista() {
         Cliente aux = nodo;
         if (!esVacia()) {
-            while (aux.getSiguiente() != null) {
-                System.out.println(aux.getNombre() + ", " + aux.getTiempo()
-                        + ", " + aux.getPrioridad());
+            while (aux != null) {
+                System.out.println("Nombre: " + aux.getNombre() + ", Tiempo: " + aux.getTiempo()
+                        + " minutos" + ", Prioridad: " + aux.getPrioridad());
                 aux = aux.getSiguiente();
             }
         }
